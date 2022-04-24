@@ -30,7 +30,12 @@ const SearchHeader = memo((props) => {
         placeholder="Search..."
         onKeyPress={onEnter}
       />
-      <button className={styles.button} type="submit" onClick={onClick}>
+      <button
+        className={styles.button}
+        type="submit"
+        onClick={onClick}
+        data-testid="test-button"
+      >
         <img className={styles.buttonImg} src="/images/search.png" alt="" />
       </button>
     </header>
