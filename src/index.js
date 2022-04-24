@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./app";
+import App from "./app/app";
 import "@fortawesome/fontawesome-free/js/all.js";
 import Youtube from "./service/youtube";
 
