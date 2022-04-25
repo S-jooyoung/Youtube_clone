@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchHeader renders 1`] = `
+<header
+  className="header"
+>
+  <div
+    className="logo"
+  >
+    <img
+      alt="logo"
+      className="img"
+      src="/images/logo.png"
+    />
+    <h1
+      className="title"
+    >
+      Youtube
+    </h1>
+  </div>
+  <input
+    className="input"
+    onKeyPress={[Function]}
+    placeholder="Search..."
+    type="text"
+  />
+  <button
+    className="button"
+    data-testid="test-button"
+    onClick={[Function]}
+    type="submit"
+  >
+    <img
+      alt=""
+      className="buttonImg"
+      src="/images/search.png"
+    />
+  </button>
+</header>
+`;
