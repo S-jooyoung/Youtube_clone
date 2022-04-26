@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VideoDetail renders 1`] = `
+<section
+  className="detail"
+>
+  <iframe
+    allowFullScreen={true}
+    className="video"
+    frameBorder="0"
+    height="500"
+    src="https://www.youtube.com/embed/cheYIVEtVQ4"
+    type="text/html"
+    width="100%"
+  />
+  <h2>
+    Test Title
+  </h2>
+  <h3>
+    TestCode is good
+  </h3>
+  <pre
+    className="description"
+  >
+    Test Desciption
+  </pre>
+</section>
+`;

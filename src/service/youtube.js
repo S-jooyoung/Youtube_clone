@@ -16,6 +16,7 @@ class Youtube {
         maxResults: 25,
       },
     });
+    console.log(response.data.items);
     return response.data.items;
   }
 
