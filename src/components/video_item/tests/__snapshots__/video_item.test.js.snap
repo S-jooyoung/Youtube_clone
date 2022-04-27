@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VideoItem renderer 1`] = `
+<li
+  className="container list"
+  onClick={[Function]}
+>
+  <div
+    className="video"
+  >
+    <img
+      alt="video thumbnail"
+      className="thumbnail"
+      src="https://i.ytimg.com/vi/cheYIVEtVQ4/mqdefault.jpg"
+    />
+    <div
+      className="metadata"
+    >
+      <p
+        className="title"
+      >
+        Test Title
+      </p>
+      <p
+        className="channel"
+      >
+        TestCode is good
+      </p>
+    </div>
+  </div>
+</li>
+`;
