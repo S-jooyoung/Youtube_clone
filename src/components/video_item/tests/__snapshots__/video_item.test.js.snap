@@ -3,6 +3,7 @@
 exports[`VideoItem renderer 1`] = `
 <li
   className="container list"
+  data-testid="video_item"
   onClick={[Function]}
 >
   <div
@@ -18,11 +19,13 @@ exports[`VideoItem renderer 1`] = `
     >
       <p
         className="title"
+        data-testid="title"
       >
         Test Title
       </p>
       <p
         className="channel"
+        data-testid="channel"
       >
         TestCode is good
       </p>

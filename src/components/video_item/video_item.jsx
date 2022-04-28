@@ -8,6 +8,7 @@ const VideoItem = memo(({ video, onVideoClick, display }) => {
     <li
       className={`${styles.container} ${displayType}`}
       onClick={() => onVideoClick(video)}
+      data-testid="video_item"
     >
       <div className={styles.video}>
         <img
@@ -16,8 +17,12 @@ const VideoItem = memo(({ video, onVideoClick, display }) => {
           alt="video thumbnail"
         />
         <div className={styles.metadata}>
-          <p className={styles.title}>{video.snippet.title}</p>
-          <p className={styles.channel}>{video.snippet.channelTitle}</p>
+          <p className={styles.title} data-testid="title">
+            {video.snippet.title}
+          </p>
+          <p className={styles.channel} data-testid="channel">
+            {video.snippet.channelTitle}
+          </p>
         </div>
       </div>
     </li>

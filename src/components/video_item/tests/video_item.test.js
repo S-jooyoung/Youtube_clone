@@ -7,6 +7,11 @@ import VideoItem from "../video_item";
 //import snapshot-testing methods
 import renderer from "react-test-renderer";
 
+//import component-testing mothods
+import "@testing-library/jest-dom";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+
 describe("VideoItem", () => {
   const video = {
     id: "cheYIVEtVQ4",
@@ -54,5 +59,39 @@ describe("VideoItem", () => {
       .toJSON();
 
     expect(component).toMatchSnapshot();
+  });
+
+  describe("Click VideoItem", () => {
+    let button;
+    let title;
+    let channel;
+    let onVideoClick;
+
+    beforeEach(() => {
+      onVideoClick = jest.fn();
+      render(
+        <VideoItem
+          video={video}
+          onVideoClick={onVideoClick}
+          display={display}
+        />
+      );
+      button = screen.getByTestId("video_item");
+      title = screen.getByTestId("title");
+      channel = screen.getByTestId("channel");
+    });
+
+    it("call onVideoClick when videoItem clicked", () => {
+      userEvent.click(button);
+
+      expect(onVideoClick).toHaveBeenCalledWith(video);
+    });
+
+    it("call videoInfo when videoItem clicked", () => {
+      userEvent.click(button);
+
+      expect(title).toHaveTextContent(video.snippet.title);
+      expect(channel).toHaveTextContent(video.snippet.channelTitle);
+    });
   });
 });
