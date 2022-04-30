@@ -5,6 +5,7 @@ exports[`VideoItem renderer 1`] = `
   className="container list"
   data-testid="video_item"
   onClick={[Function]}
+  title="videoItem"
 >
   <div
     className="video"

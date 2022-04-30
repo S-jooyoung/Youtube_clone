@@ -10,6 +10,7 @@ import renderer from "react-test-renderer";
 //import component-testing methods
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import "@testing-library/jest-dom";
 
 describe("VideoList", () => {
   const videos = [
@@ -69,5 +70,28 @@ describe("VideoList", () => {
     const component = renderer.create(VideoListComponent).toJSON;
 
     expect(component).toMatchSnapshot();
+  });
+
+  describe("VideoItem Click", () => {
+    beforeEach(() => {
+      render(VideoListComponent);
+    });
+
+    it('calls onVideoClick wehn clicking "VideoItem Component"', () => {
+      const button = screen.getAllByTitle("videoItem")[0];
+      userEvent.click(button);
+      expect(onVideoClick).toHaveBeenCalledWith(videos[0]);
+    });
+
+    it('call videoInfo when clicking "VideoItem Component"', () => {
+      const button = screen.getAllByTitle("videoItem")[0];
+      const title = screen.getAllByTestId("title")[0];
+      const channel = screen.getAllByTestId("channel")[0];
+
+      userEvent.click(button);
+
+      expect(title).toHaveTextContent(videos[0].snippet.title);
+      expect(channel).toHaveTextContent(videos[0].snippet.channelTitle);
+    });
   });
 });

@@ -9,6 +9,7 @@ const VideoItem = memo(({ video, onVideoClick, display }) => {
       className={`${styles.container} ${displayType}`}
       onClick={() => onVideoClick(video)}
       data-testid="video_item"
+      title="videoItem"
     >
       <div className={styles.video}>
         <img
