@@ -16,7 +16,7 @@ class Youtube {
         maxResults: 25,
       },
     });
-    console.log(response.data.items);
+    console.log(JSON.stringify(response.data.items));
     return response.data.items;
   }
 
